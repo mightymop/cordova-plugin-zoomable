@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="cordova-plugin-zoomable"
+        version="1.0.0">
+
+  <name>zoomable</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/Zoomable.js" target="js/Zoomable.js"/>
+
+  <js-module src="www/Zoomable.js" name="Zoomable">
+     <clobbers target="zoomable" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Zoomable">
+        <param name="android-package" value="de.mopsdom.zoomable.Zoomable"/>
+		<!--param name="onload" value="true"/-->
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/Zoomable.java" target-dir="src/de/mopsdom/zoomable"/>
+
+  </platform>
+
+
+</plugin>
