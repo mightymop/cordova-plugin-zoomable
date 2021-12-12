@@ -2,6 +2,7 @@ package de.mopsdom.zoomable;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.view.View;
 import android.webkit.WebView;
 
 import org.apache.cordova.CallbackContext;
