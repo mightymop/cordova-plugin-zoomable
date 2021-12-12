@@ -14,6 +14,12 @@ var zoomable = {
 	},
 	disablecontrols : function (success, error ) {
 		exec(success, error, 'Zoomable', 'disablecontrols', []);
+	},
+	enablehwacceleration : function (success, error ) {
+		exec(success, error, 'Zoomable', 'enablehwacceleration', []);
+	},
+	disablehwacceleration : function (success, error ) {
+		exec(success, error, 'Zoomable', 'disablehwacceleration', []);
 	}
 };
 

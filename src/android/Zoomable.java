@@ -16,7 +16,7 @@ public class Zoomable extends CordovaPlugin {
     @Override
     public boolean execute(final String action, final JSONArray data, final CallbackContext callbackContext) {
 
-        if (action.equals("enable")||action.equals("disable")||action.equals("enablecontrols")||action.equals("disablecontrols")) {
+        if (action.equals("enable")||action.equals("disable")||action.equals("enablecontrols")||action.equals("disablecontrols")||action.equals("enablehwacceleration")||action.equals("disablehwacceleration")) {
             final WebView webView = (WebView) this.webView.getEngine().getView();
             try
             {
@@ -37,6 +37,12 @@ public class Zoomable extends CordovaPlugin {
                         }
                         else if (action.equals("disablecontrols")) {
                             webView.getSettings().setDisplayZoomControls(false);
+                        }
+                        else if (action.equals("enablehwacceleration")) {
+                            webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+                        }
+                        else if (action.equals("disablehwacceleration")) {
+                            webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
                         }
 
                         new Handler(myLooper).post(new Runnable() {
