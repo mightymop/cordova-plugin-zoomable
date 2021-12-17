@@ -40,10 +40,25 @@ public class Zoomable extends CordovaPlugin {
                             webView.getSettings().setDisplayZoomControls(false);
                         }
                         else if (action.equals("enablehwacceleration")) {
-                            webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+                            try {
+                                webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+                            }
+                            catch (Exception e)
+                            {
+                                 callbackContext.error(e.getMessage());
+                                 return;
+                            }
                         }
                         else if (action.equals("disablehwacceleration")) {
-                            webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+                            
+                            try {
+                                webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+                            }
+                            catch (Exception e)
+                            {
+                                 callbackContext.error(e.getMessage());
+                                 return;
+                            }
                         }
 
                         new Handler(myLooper).post(new Runnable() {
